@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        dd(base_path(''));
+        dd(base_path('../..'));
         Schema::defaultStringLength(191);
         $this->app->bind('path.public', function() {
             dd(__DIR__);
