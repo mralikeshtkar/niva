@@ -28,11 +28,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        dd(base_path('../..'));
         Schema::defaultStringLength(191);
         $this->app->bind('path.public', function() {
-            dd(__DIR__);
-            return base_path().'/public_html';
+            return base_path().'/../../public_html';
         });
         if($this->app->environment('production')) {
             URL::forceScheme('https');
